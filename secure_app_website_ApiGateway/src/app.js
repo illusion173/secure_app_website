@@ -11,9 +11,9 @@ Amplify.configure({
         endpoint: "https://774cf5appa.execute-api.us-west-2.amazonaws.com/beta11",
         custom_header: async () => { 
           return {
-               'x-api-key' : '4DBMnuI4zK9isxVaPfZ373ZAR4JtxCZi3EfdCuCZ',
-             'Authorization' : 'Bearer 4DBMnuI4zK9isxVaPfZ373ZAR4JtxCZi3EfdCuCZ',
-               'Authentication' : 'Bearer 4DBMnuI4zK9isxVaPfZ373ZAR4JtxCZi3EfdCuCZ'} 
+               'x-api-key' : '#',
+             'Authorization' : 'Bearer #',
+               'Authentication' : 'Bearer #'} 
         }
       }
     ]
