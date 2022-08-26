@@ -1,0 +1,34 @@
+{
+    "resolvers": [
+        {
+            "typeName": "Query",
+            "fieldName": "adminCheck",
+            "dataSourceName": "confirmjwttokenlambda",
+            "resolverArn": "arn:aws:appsync:us-west-2:006840835651:apis/ciqd7xg4wbauhhp427zch5c2eq/types/Query/resolvers/adminCheck",
+            "requestMappingTemplate": "#**\n    The value of 'payload' after the template has been evaluated\n    will be passed as the event to AWS Lambda.\n*#\n{\n    \"version\" : \"2017-02-28\",\n    \"operation\": \"Invoke\",\n    \"payload\": $util.toJson($context.arguments)\n}",
+            "responseMappingTemplate": "$util.toJson($context.result)",
+            "kind": "UNIT",
+            "maxBatchSize": 0
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "checkSessionStatus",
+            "dataSourceName": "checkstatusofsessiondatasource",
+            "resolverArn": "arn:aws:appsync:us-west-2:006840835651:apis/ciqd7xg4wbauhhp427zch5c2eq/types/Query/resolvers/checkSessionStatus",
+            "requestMappingTemplate": "#**\nThe value of 'payload' after the template has been evaluated\nwill be passed as the event to AWS Lambda.\n*#\n{\n  \"version\" : \"2017-02-28\",\n  \"operation\": \"Invoke\",\n    \"payload\": {\n  \t\"session_id_unsigned\" : \"$context.arguments.session_id_unsigned\"\n  }\n}",
+            "responseMappingTemplate": "$util.toJson($context.result)",
+            "kind": "UNIT",
+            "maxBatchSize": 0
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "getSignedSessionID",
+            "dataSourceName": "generatesessionId",
+            "resolverArn": "arn:aws:appsync:us-west-2:006840835651:apis/ciqd7xg4wbauhhp427zch5c2eq/types/Query/resolvers/getSignedSessionID",
+            "requestMappingTemplate": "#**\nThe value of 'payload' after the template has been evaluated\nwill be passed as the event to AWS Lambda.\n*#\n{\n  \"version\" : \"2017-02-28\",\n  \"operation\": \"Invoke\",\n  \"payload\": $util.toJson($context.args)\n}",
+            "responseMappingTemplate": "$util.toJson($context.result)",
+            "kind": "UNIT",
+            "maxBatchSize": 0
+        }
+    ]
+}

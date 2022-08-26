@@ -1,0 +1,22 @@
+﻿schema {
+  query: Query
+}
+
+type GetSignedSessionIDType {
+  clear_session_id: String
+  signed_session_id: String
+}
+
+type Query {
+  adminCheck: adminCheckType @aws_auth(cognito_groups : ["Managers"]) @aws_cognito_user_pools(cognito_groups : ["Managers"])
+  checkSessionStatus(session_id_unsigned: String!): checkStatusType
+  getSignedSessionID: GetSignedSessionIDType
+}
+
+type adminCheckType @aws_auth(cognito_groups : ["Managers"]) @aws_cognito_user_pools(cognito_groups : ["Managers"]) {
+  managerConfirmation: String @aws_auth(cognito_groups : ["Managers"]) @aws_cognito_user_pools(cognito_groups : ["Managers"])
+}
+
+type checkStatusType {
+  jwt_token: String
+}
