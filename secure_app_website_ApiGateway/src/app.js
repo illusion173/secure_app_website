@@ -8,7 +8,7 @@ Amplify.configure({
     endpoints: [
       {
         name: "secure_app_api",
-        endpoint: "https://774cf5appa.execute-api.us-west-2.amazonaws.com/beta11",
+        endpoint: "#",
         custom_header: async () => { 
           return {
                'x-api-key' : '#',
@@ -49,7 +49,7 @@ async function adminCheck(jwt_token){
        endpoints: [
          {
            name: "secure_app_api",
-           endpoint: "https://774cf5appa.execute-api.us-west-2.amazonaws.com/beta11",
+           endpoint: "#",
            custom_header: async () => { 
              return {
                 'Authorization' : 'Bearer ' + jwt_token,
